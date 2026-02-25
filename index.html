@@ -1,206 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Krishna | Futuristic Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Krishna | Developer Portfolio</title>
+  <meta name="description"
+    content="Krishna — BCA Student, Developer & Tech Enthusiast. Explore my projects, passions, and tech journey." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bangers&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* One Piece Luffy Animated Cursor */
+    *,
+    *::before,
+    *::after {
+      cursor: url('One Piece Luffy & Arrow Animated--cursor--SweezyCursors..ani'), auto !important;
+    }
+
+    a,
+    button,
+    [role="button"] {
+      cursor: url('One Piece Luffy & Arrow Animated--cursor--SweezyCursors..ani'), pointer !important;
+    }
+  </style>
 </head>
+
 <body>
-  <div id="particles-js"> </div>
-  <!-- Bootstrap JS Bundle (with Popper) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Settings overlay for backdrop -->
-        <div class="controls">
-  <div class="control-panel">
-    <input type="color" id="color-picker" value="#00ffea" onchange="updateColor(this.value)">
-  </div> 
 
-</div>
- 
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
 
-      <!-- Resize Handle -->
-      <div class="resize-handle" id="resize-handle"></div>
-    </div>
-  </div>
+  <!-- Particle Canvas Background -->
+  <canvas id="particleCanvas"></canvas>
 
-  <header class="header">
-    <div class="container">
-      <div class="avatar-container">
-        <img src="b4d58dd1816b469aaaf9c74b10081eba.webp" alt="Krishna" class="avatar">
-        <div class="avatar-ring"></div>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <span class="logo-text">K</span>
+        <span class="logo-full">KRISHNA</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#passions" class="nav-link">Passions</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </div>
-      <h1 class="glitch" data-text="KRISHNA">KRISHNA</h1>
-      <p class="subtitle">  BCA Student | Developer | Tech Enthusiast </p>
-      <div class="social-icons">
-        <a href="https://youtube.com/@onizukanice?si=UR9EjTUHb30InnE4" target="_blank" aria-label="YouTube">
-          <i class="fab fa-youtube"></i>
-        </a>
-        <a href="https://github.com/krishna3251" target="_blank" aria-label="GitHub">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="https://discord.gg/HeSxrWaEdz" target="_blank" aria-label="Discord server">
-          <i class="fab fa-discord"></i>
-        </a>
-        <a href="https://www.instagram.com/krishna_sanskari69?igsh=dmlmeTdsMG5oYmll" target="_blank" aria-label="instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-      </div>
-      <div style="margin-top: 20px;">
-        <button class="sparkle-btn"  a href="https://www.youtube.com/@whitehollow9?si=Vk73E5xceeYoX4kw" target=" ne">
-         Hover me+
-          <span class="stars">
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-          </span>
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle theme">
+          <i class="fas fa-palette"></i>
+        </button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+          <span></span><span></span><span></span>
         </button>
       </div>
     </div>
-  </header>
+  </nav>
 
-  <section class="content-section" id="about">
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-effects">
+      <!-- 3D Boxes Hover Effect -->
+      <canvas id="boxesCanvas"></canvas>
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-orb hero-orb-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="avatar-wrapper" data-tilt>
+        <div class="avatar-rings">
+          <div class="ring ring-1"></div>
+          <div class="ring ring-2"></div>
+          <div class="ring ring-3"></div>
+        </div>
+        <div class="avatar-glow"></div>
+        <img src="b4d58dd1816b469aaaf9c74b10081eba.webp" alt="Krishna" class="avatar-img" />
+      </div>
+      <div class="hero-text">
+        <h1 class="hero-title" data-text="KRISHNA">
+          <span class="title-line">KRISHNA</span>
+        </h1>
+        <p class="hero-subtitle">
+          <span class="typewriter-wrap"><span id="typewriterText">BCA Student</span><span
+              class="cursor-blink">|</span></span>
+        </p>
+        <div class="hero-socials">
+          <a href="https://youtube.com/@onizukanice?si=UR9EjTUHb30InnE4" target="_blank" rel="noopener"
+            class="social-icon" aria-label="YouTube" data-tooltip="YouTube">
+            <div class="icon-ring"></div>
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://github.com/krishna3251" target="_blank" rel="noopener" class="social-icon"
+            aria-label="GitHub" data-tooltip="GitHub">
+            <div class="icon-ring"></div>
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://discord.gg/HeSxrWaEdz" target="_blank" rel="noopener" class="social-icon"
+            aria-label="Discord" data-tooltip="Discord">
+            <div class="icon-ring"></div>
+            <i class="fab fa-discord"></i>
+          </a>
+          <a href="https://www.instagram.com/krishna_sanskari69" target="_blank" rel="noopener" class="social-icon"
+            aria-label="Instagram" data-tooltip="Instagram">
+            <div class="icon-ring"></div>
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+        <a href="#passions" class="cta-button">
+          <span class="cta-text">Explore My Work</span>
+          <span class="cta-icon"><i class="fas fa-arrow-down"></i></span>
+          <div class="cta-glow"></div>
+        </a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll Down</span>
+    </div>
+  </section>
+
+  <!-- Passions Section -->
+  <section class="section" id="passions">
     <div class="container">
-      <h2 class="section-title">MY PASSIONS</h2>
-      <div class="cards-container" id="cards-container">
+      <div class="section-header">
+        <span class="section-tag">01</span>
+        <h2 class="section-title">MY PASSIONS</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="passions-grid">
         <!-- Gaming Card -->
-        <div class="card card-motion" style="animation-delay: 0s; transform-origin: center; position: relative; z-index: 10;" id="gaming-card">
-          <div class="card-inner">
-            <div class="card-front">
-              <div class="glow"></div>
-              <i class="fas fa-gamepad card-icon"></i>
-              <h3 class="card-title">Gaming</h3>
+        <div class="passion-card" data-tilt>
+          <div class="passion-card-inner">
+            <div class="passion-card-front">
+              <div class="passion-icon-wrap">
+                <i class="fas fa-gamepad"></i>
+                <div class="icon-pulse"></div>
+              </div>
+              <h3 class="passion-title">Gaming</h3>
+              <p class="passion-hint">Hover to explore</p>
             </div>
-            <div class="card-back">
-              <h3 class="card-title">Gaming</h3>
-              <p class="card-description">
-                I play games like Genshin Impact, Wuthering Waves, and many more. Gaming is not just a hobby for me; it's a way to connect with friends and explore new worlds.
-              </p>
-              <img src="xiao.jpeg" alt="gaming-card" class="hover-image">
+            <div class="passion-card-back">
+              <img src="xiao.jpeg" alt="Gaming" class="passion-bg-img" />
+              <div class="passion-overlay"></div>
+              <div class="passion-back-content">
+                <h3 class="passion-title">Gaming</h3>
+                <p class="passion-desc">I play games like Genshin Impact, Wuthering Waves, and many more. Gaming is not
+                  just a hobby for me; it's a way to connect with friends and explore new worlds.</p>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Development Card -->
-        <div class="card card-motion" style="animation-delay: 0.5s; transform-origin: center; position: relative; z-index: 10;" id="dev-card">
-          <div class="card-inner">
-            <div class="card-front">
-              <div class="glow"></div>
-              <i class="fas fa-code card-icon"></i>
-              <h3 class="card-title">Development</h3>
+        <div class="passion-card" data-tilt>
+          <div class="passion-card-inner">
+            <div class="passion-card-front">
+              <div class="passion-icon-wrap">
+                <i class="fas fa-code"></i>
+                <div class="icon-pulse"></div>
+              </div>
+              <h3 class="passion-title">Development</h3>
+              <p class="passion-hint">Hover to explore</p>
             </div>
-            <div class="card-back">
-              <h3 class="card-title">Development</h3>
-              <p class="card-description">
-                I build interactive web applications using modern tools and frameworks. I'm passionate about creating
-                intuitive user experiences and efficient backend solutions.
-              </p>
-              <img src="futurestic.jpg" alt="development-card" class="hover-image">
+            <div class="passion-card-back">
+              <img src="futurestic.jpg" alt="Development" class="passion-bg-img" />
+              <div class="passion-overlay"></div>
+              <div class="passion-back-content">
+                <h3 class="passion-title">Development</h3>
+                <p class="passion-desc">I build interactive web applications using modern tools and frameworks. I'm
+                  passionate about creating intuitive user experiences and efficient backend solutions.</p>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Community Card -->
-        <div class="card card-motion" style="animation-delay: 1s; transform-origin: center; position: relative; z-index: 8;" id="community-card">
-          <div class="card-inner">
-            <div class="card-front">
-              <div class="glow"></div>
-              <i class="fas fa-users card-icon"></i>
-              <h3 class="card-title">Community</h3>
+        <div class="passion-card" data-tilt>
+          <div class="passion-card-inner">
+            <div class="passion-card-front">
+              <div class="passion-icon-wrap">
+                <i class="fas fa-users"></i>
+                <div class="icon-pulse"></div>
+              </div>
+              <h3 class="passion-title">Community</h3>
+              <p class="passion-hint">Hover to explore</p>
             </div>
-            <div class="card-back">
-              <h3 class="card-title">Community</h3>
-              <p class="card-description">
-                I am not a YouTuber just a YouTube watcher and I am not a gamer just a game watcher and I am not a developer just a developer watcher.
-              </p>
-              <img src="community.png" alt="community-card" class="hover-image">
+            <div class="passion-card-back">
+              <img src="community.png" alt="Community" class="passion-bg-img" />
+              <div class="passion-overlay"></div>
+              <div class="passion-back-content">
+                <h3 class="passion-title">Community</h3>
+                <p class="passion-desc">I am not a YouTuber just a YouTube watcher and I am not a gamer just a game
+                  watcher and I am not a developer just a developer watcher.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
- 
-  <section class="content-section" id="projects">
+
+  <!-- Projects Section -->
+  <section class="section" id="projects">
     <div class="container">
-      <h2 class="section-title">RECENT PROJECTS</h2>
-      <div class="project-grid">
+      <div class="section-header">
+        <span class="section-tag">02</span>
+        <h2 class="section-title">RECENT PROJECTS</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="projects-grid">
         <!-- Project 1 -->
-        <div class="project-card">
-          <img src="krishna.jpg" alt="krishna" class="project-image">
-          <div class="project-info">
+        <div class="project-card" data-tilt>
+          <div class="project-image-wrap">
+            <img src="krishna.jpg" alt="GitHub Projects" class="project-img" />
+            <div class="project-image-overlay"></div>
+          </div>
+          <div class="project-content">
+            <div class="project-badge">Repository</div>
             <h3 class="project-title">GITHUB</h3>
-            <p class="project-desc">Just a bot files and info</p>
-            <div class="tech-stack">
-              <span class="tech-tag">only python so far</span>
+            <p class="project-desc">Just a bot files and info — Python scripts, Discord bots, and more from my coding
+              journey.</p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
             </div>
-            <a href="https://github.com/krishna3251" target="_blank" class="cyber-button">
-              <i class="fab fa-github" style="margin-right: 5px;"></i> View on GitHub
+            <a href="https://github.com/krishna3251" target="_blank" rel="noopener" class="project-link">
+              <i class="fab fa-github"></i>
+              <span>View on GitHub</span>
+              <i class="fas fa-arrow-right"></i>
             </a>
           </div>
         </div>
 
         <!-- Project 2 -->
-        <div class="project-card">
-          <img src="krishna2.png" alt="Project 2" class="project-image">
-          <div class="project-info">
+        <div class="project-card" data-tilt>
+          <div class="project-image-wrap">
+            <img src="krishna2.png" alt="Discord Bot" class="project-img" />
+            <div class="project-image-overlay"></div>
+          </div>
+          <div class="project-content">
+            <div class="project-badge">Bot</div>
             <h3 class="project-title">Discord Bot</h3>
-            <p class="project-desc">A powerful Discord bot with moderation tools and fun interactions.</p>
-            <div class="tech-stack">
-              <span class="tech-tag">python</span>
-              <span class="tech-tag">discordpy</span>
+            <p class="project-desc">A powerful Discord bot with moderation tools, fun interactions, and smart automation
+              features.</p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">discord.py</span>
             </div>
-            <div>
-              <a href="https://discord.com/oauth2/authorize?client_id=1285240144982577203" target="_blank" class="cyber-button">
-                <i class="fab fa-discord" style="margin-right: 5px;"></i> Add my bot
-              </a>
-            </div>
+            <a href="https://discord.com/oauth2/authorize?client_id=1285240144982577203" target="_blank" rel="noopener"
+              class="project-link">
+              <i class="fab fa-discord"></i>
+              <span>Add My Bot</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-
-  <footer class="footer">
+  <!-- Contact / Footer Section -->
+  <footer class="footer" id="contact">
+    <div class="footer-glow"></div>
     <div class="container">
-      <div class="footer-logo">KRISHNA</div>
-      <p class="copyright">© 2025 Krishna. All rights reserved.</p>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h2 class="footer-logo">KRISHNA</h2>
+          <p class="footer-tagline">Building the future, one line of code at a time.</p>
+        </div>
+        <div class="footer-links">
+          <h4 class="footer-heading">Connect</h4>
+          <div class="footer-socials">
+            <a href="https://youtube.com/@onizukanice?si=UR9EjTUHb30InnE4" target="_blank" rel="noopener"
+              aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://github.com/krishna3251" target="_blank" rel="noopener" aria-label="GitHub"><i
+                class="fab fa-github"></i></a>
+            <a href="https://discord.gg/HeSxrWaEdz" target="_blank" rel="noopener" aria-label="Discord"><i
+                class="fab fa-discord"></i></a>
+            <a href="https://www.instagram.com/krishna_sanskari69" target="_blank" rel="noopener"
+              aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4 class="footer-heading">Navigation</h4>
+          <a href="#hero" class="footer-nav-link">Home</a>
+          <a href="#passions" class="footer-nav-link">Passions</a>
+          <a href="#projects" class="footer-nav-link">Projects</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2025 Krishna. All rights reserved.</p>
+        <p class="footer-credit">Designed with <span class="heart">&hearts;</span> and caffeine</p>
+      </div>
     </div>
   </footer>
 
-</script>
+  <!-- Audio Element -->
+  <audio id="bgMusic" loop>
+    <source src="assets/audio/background.mp3" type="audio/mpeg" />
+  </audio>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-  <script src="script.js"></script> 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  
+  <!-- Floating Music Player -->
+  <div class="music-player" id="musicPlayer">
+    <button class="music-btn" id="musicBtn" aria-label="Toggle music">
+      <div class="music-btn-bg"></div>
+      <div class="music-visualizer" id="musicVisualizer">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <i class="fas fa-play music-play-icon" id="musicIcon"></i>
+      <div class="music-ripple"></div>
+    </button>
+    <div class="music-tooltip">
+      <div class="music-tooltip-inner">
+        <span class="music-label" id="musicLabel">Play Vibes</span>
+        <div class="music-progress-wrap">
+          <div class="music-progress" id="musicProgress"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="boxes.js"></script>
 </body>
 
 </html>

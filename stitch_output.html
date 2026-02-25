@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KRISHNA | Futuristic Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Orbitron:wght@400;700;900&amp;family=Rajdhani:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#06f9e4",
+                        "secondary": "#ff00ff",
+                        "accent": "#00ff95",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0a0a14",
+                    },
+                    fontFamily: {
+                        "display": ["Orbitron", "sans-serif"],
+                        "body": ["Rajdhani", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: #0a0a14;
+        }
+        .orbitron { font-family: 'Orbitron', sans-serif; }
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-text-cyan {
+            text-shadow: 0 0 10px rgba(6, 249, 228, 0.5), 0 0 20px rgba(6, 249, 228, 0.3);
+        }
+        .neon-border-cyan:hover {
+            box-shadow: 0 0 15px rgba(6, 249, 228, 0.4);
+            border-color: rgba(6, 249, 228, 0.6);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #06f9e4, #ff00ff, #00ff95);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .radial-glow {
+            background: radial-gradient(circle at center, rgba(6, 249, 228, 0.1) 0%, transparent 70%);
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-slate-100 overflow-x-hidden">
+<!-- Scroll Progress -->
+<div class="fixed top-0 left-0 w-full h-1 z-50 bg-background-dark/50">
+<div class="h-full bg-primary" style="width: 35%;"></div>
+</div>
+<div class="relative min-h-screen flex flex-col">
+<!-- Floating Elements -->
+<div class="absolute top-20 left-10 w-64 h-64 bg-primary/5 rounded-full blur-[100px]"></div>
+<div class="absolute bottom-20 right-10 w-96 h-96 bg-secondary/5 rounded-full blur-[120px]"></div>
+<!-- Header -->
+<header class="layout-container flex items-center justify-between px-6 py-6 md:px-20 sticky top-0 z-40 bg-background-dark/80 backdrop-blur-md border-b border-white/5">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-background-dark font-bold">terminal</span>
+</div>
+<h2 class="orbitron text-white text-xl font-black tracking-tighter">KRISHNA</h2>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-slate-300 hover:text-primary transition-colors text-sm font-semibold tracking-widest orbitron" href="#">HOME</a>
+<a class="text-slate-300 hover:text-primary transition-colors text-sm font-semibold tracking-widest orbitron" href="#passions">PASSIONS</a>
+<a class="text-slate-300 hover:text-primary transition-colors text-sm font-semibold tracking-widest orbitron" href="#projects">PROJECTS</a>
+<a class="text-slate-300 hover:text-primary transition-colors text-sm font-semibold tracking-widest orbitron" href="#">CONTACT</a>
+</nav>
+<button class="flex items-center justify-center rounded-full size-10 bg-white/5 border border-white/10 text-white hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined">palette</span>
+</button>
+</header>
+<!-- Hero Section -->
+<section class="flex flex-col items-center justify-center min-h-[90vh] px-6 relative">
+<div class="relative mb-8">
+<div class="absolute -inset-4 rounded-full border border-primary/30 animate-pulse"></div>
+<div class="absolute -inset-1 rounded-full border-2 border-primary shadow-[0_0_20px_rgba(6,249,228,0.5)]"></div>
+<div class="size-32 md:size-44 rounded-full bg-slate-800 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="Futuristic male avatar portrait in neon lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNgbmNOutt-UzujadMzoV825CAnvVA8BuHOheCz8TBgMHKLsmZs2DjHazgqyeZ68VBvCk19Tqo6G2kJ5pmMRfAab7fBgnW5mnlKOcfjCGDFenIeF6-jXyfruGtrCohulcyK698Py3vLFUM9EKLwdewxtCY_djqgz3MCFTfYwYbsdFTRWJzE7CTU8ZDdaaAegIgqVQwnn_KFU9JB8UrX4tH80rVsxu25BqB9yKnoBd9elrWk9B7VrCKq-6wSQiUd3dWykcDhpHz25ff"/>
+</div>
+</div>
+<div class="text-center max-w-4xl mx-auto">
+<h1 class="orbitron text-6xl md:text-8xl font-black mb-4 gradient-text tracking-tighter">
+                    KRISHNA
+                </h1>
+<h2 class="text-slate-400 text-lg md:text-2xl font-light tracking-[0.2em] mb-10 orbitron uppercase">
+                    BCA Student | Developer | Tech Enthusiast
+                </h2>
+<div class="flex flex-wrap justify-center gap-6 mb-12">
+<div class="group flex flex-col items-center gap-2">
+<div class="size-12 rounded-full glass flex items-center justify-center group-hover:bg-primary/20 group-hover:text-primary transition-all duration-300 border border-white/10 group-hover:border-primary">
+<span class="material-symbols-outlined">play_circle</span>
+</div>
+<span class="text-[10px] orbitron tracking-widest text-slate-500 group-hover:text-primary">YOUTUBE</span>
+</div>
+<div class="group flex flex-col items-center gap-2">
+<div class="size-12 rounded-full glass flex items-center justify-center group-hover:bg-primary/20 group-hover:text-primary transition-all duration-300 border border-white/10 group-hover:border-primary">
+<span class="material-symbols-outlined">code</span>
+</div>
+<span class="text-[10px] orbitron tracking-widest text-slate-500 group-hover:text-primary">GITHUB</span>
+</div>
+<div class="group flex flex-col items-center gap-2">
+<div class="size-12 rounded-full glass flex items-center justify-center group-hover:bg-primary/20 group-hover:text-primary transition-all duration-300 border border-white/10 group-hover:border-primary">
+<span class="material-symbols-outlined">forum</span>
+</div>
+<span class="text-[10px] orbitron tracking-widest text-slate-500 group-hover:text-primary">DISCORD</span>
+</div>
+<div class="group flex flex-col items-center gap-2">
+<div class="size-12 rounded-full glass flex items-center justify-center group-hover:bg-primary/20 group-hover:text-primary transition-all duration-300 border border-white/10 group-hover:border-primary">
+<span class="material-symbols-outlined">camera</span>
+</div>
+<span class="text-[10px] orbitron tracking-widest text-slate-500 group-hover:text-primary">INSTAGRAM</span>
+</div>
+</div>
+<button class="px-10 py-4 bg-primary text-background-dark orbitron font-bold rounded-full hover:scale-105 transition-transform shadow-[0_0_30px_rgba(6,249,228,0.4)] tracking-widest">
+                    EXPLORE MY WORK
+                </button>
+</div>
+</section>
+<!-- Passions Section -->
+<section class="py-24 px-6 md:px-20 max-w-7xl mx-auto w-full" id="passions">
+<div class="flex items-center gap-4 mb-12">
+<h2 class="orbitron text-3xl font-black text-white tracking-widest neon-text-cyan uppercase">My Passions</h2>
+<div class="h-px flex-1 bg-gradient-to-r from-primary/50 to-transparent"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1: Gaming -->
+<div class="glass p-8 rounded-xl group transition-all duration-500 border border-white/5 hover:border-primary/50 hover:-translate-y-2 flex flex-col min-h-[400px] overflow-hidden relative">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="material-symbols-outlined text-6xl">sports_esports</span>
+</div>
+<div class="size-12 rounded-lg bg-primary/20 flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined">sports_esports</span>
+</div>
+<h3 class="orbitron text-xl font-bold mb-4 text-white">Gaming</h3>
+<p class="text-slate-400 mb-8 font-medium">Immersive storytelling and competitive play. Exploring virtual worlds and high-stakes strategy.</p>
+<div class="mt-auto h-32 rounded-lg bg-slate-900/50 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100" data-alt="High-end gaming setup with neon ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsKC_4lgb-T194iIHXWsAdLH4FG3X4Mgm-fSiTHGSYooy8qphlJ78VoZp_ekCw4h88rzruzwOPJBBILtNUjZbvm9W9DCjZY0KPuE9P4UwgJ_C2JCfAo3Kk-34rtYy-TheLCKVaupkT1L6wpNyVK01R4cFrV9L25QdPvwK8KTOyPc-BMOLDFZkC0kTk01GPs5Lv_3jyOgYWxIzq5vS94l5WC3u0BhtY7mjlNIArNscCAeGh7qWEIlXRmfPAXqXCo1Xp5oXp-D90Sm-K"/>
+</div>
+</div>
+<!-- Card 2: Development -->
+<div class="glass p-8 rounded-xl group transition-all duration-500 border border-white/5 hover:border-accent/50 hover:-translate-y-2 flex flex-col min-h-[400px] overflow-hidden relative">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="material-symbols-outlined text-6xl">developer_mode</span>
+</div>
+<div class="size-12 rounded-lg bg-accent/20 flex items-center justify-center text-accent mb-6">
+<span class="material-symbols-outlined">developer_mode</span>
+</div>
+<h3 class="orbitron text-xl font-bold mb-4 text-white">Development</h3>
+<p class="text-slate-400 mb-8 font-medium">Building scalable web applications and efficient automation tools using modern tech stacks.</p>
+<div class="mt-auto h-32 rounded-lg bg-slate-900/50 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100" data-alt="Close up of clean code on a dark monitor screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCigOfwMncYJdcIxKfB1S73uqobD4Y_YZn1K3sGt-qw1y0WgClJ5HvsOi7es2iBNav9qLYnmVFKogB9nU1UyxhGxUEHf6khZUtvxfrucy9epPxkLR1bfqSQ6LWxbMu1QOwAGFZa9Lwgm2KBDg9iYrLNkk3xvnpuWX9m_iHci0CAggfn_ErS6HqS2phMWOTVgoKYhDtkHy3cHE0JM9knObkqGy9_IjIEo9cv3ho0VX20PLvVaEPpFjZbBLBrM2YIUT2BJIyRmOQc5J-6"/>
+</div>
+</div>
+<!-- Card 3: Community -->
+<div class="glass p-8 rounded-xl group transition-all duration-500 border border-white/5 hover:border-secondary/50 hover:-translate-y-2 flex flex-col min-h-[400px] overflow-hidden relative">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="material-symbols-outlined text-6xl">groups</span>
+</div>
+<div class="size-12 rounded-lg bg-secondary/20 flex items-center justify-center text-secondary mb-6">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<h3 class="orbitron text-xl font-bold mb-4 text-white">Community</h3>
+<p class="text-slate-400 mb-8 font-medium">Contributing to open source and managing tech communities on Discord and beyond.</p>
+<div class="mt-auto h-32 rounded-lg bg-slate-900/50 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100" data-alt="People collaborating in a tech workspace environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtH_hUjqT9cAuG3x0CeyHhKElpDqqmB5eNIzw-iCub0iaztyu7C3iznFQtIoeqW3VBlSR7byyS726vx6RmUmwbnzQmRcHZBq0xdceDNGGDLHsRtZD2dntwU8K7KF-L4iGiRs0mvStOm-CPFB_QRmD8vfJIZq4XDtLHv4y5hF-HCpkRZ-EhoRb7HnCZRqEbvOEzXuQMufv1iDnTo9L1jSdKyvuyL2NDGZivafNUPOs8CNLTjbVF4wn_aKSaI1eY2IS7GZ2fVW3-hmNQ"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section class="py-24 px-6 md:px-20 max-w-7xl mx-auto w-full" id="projects">
+<div class="flex items-center gap-4 mb-12 flex-row-reverse">
+<h2 class="orbitron text-3xl font-black text-white tracking-widest neon-text-cyan uppercase">Recent Projects</h2>
+<div class="h-px flex-1 bg-gradient-to-l from-primary/50 to-transparent"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<!-- Project 1 -->
+<div class="group glass rounded-2xl overflow-hidden hover:shadow-[0_0_40px_rgba(6,249,228,0.15)] transition-all duration-500 border border-white/5">
+<div class="h-64 bg-slate-800 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Cyberpunk digital abstract visualization with lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn5_o5aKKmZ5g0D5HesZ4MdvB59Z8aq4XmV45jU4wDzQEQ0lw_9agk9Da4IcuY0wrLVJmAoVXG784Htg6aNRIRDgM0DvxNtK6eyfrISB-tnLjfXVm50C245Ex7LHTPhRc3J9m0NMoDt5pr9xy5197MuCK0slVzZu8sr-2R8fMxzM1ItVFMmp0dyFWisLh8kPdrw_B7wMU5qDX2Nob3Amgdtsh3Z8FxjJVos6D9BTjY2YCiqSI1hgk0EwgsITgs709foF8q0qKsNNwM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark to-transparent opacity-80"></div>
+<div class="absolute bottom-6 left-6">
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-primary/20 text-primary text-[10px] font-bold orbitron rounded-full">PYTHON</span>
+<span class="px-3 py-1 bg-secondary/20 text-secondary text-[10px] font-bold orbitron rounded-full">API</span>
+</div>
+</div>
+</div>
+<div class="p-8">
+<h3 class="orbitron text-2xl font-bold text-white mb-3">Nebula Dashboard</h3>
+<p class="text-slate-400 mb-6 font-medium">A real-time analytics dashboard for monitoring distributed systems with automated reporting.</p>
+<div class="flex items-center gap-4">
+<button class="flex-1 py-3 bg-primary/10 border border-primary/30 text-primary orbitron font-bold text-sm rounded-lg hover:bg-primary hover:text-background-dark transition-all">VIEW LIVE</button>
+<button class="size-12 flex items-center justify-center glass rounded-lg hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined">code</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group glass rounded-2xl overflow-hidden hover:shadow-[0_0_40px_rgba(255,0,255,0.15)] transition-all duration-500 border border-white/5">
+<div class="h-64 bg-slate-800 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Artificial intelligence glowing nodes connection network" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvUPjY8JQtdsAv7rhPlZw1nbWdgPAk1LNcIG2y1UpLvvHHarNxqH7AhGfObodjaYn2Q50glOFpn74krsl_3WavaRhkHFsTiihjcft75k8XpuqiLkm5W6cEqFcjDUFY0I617atFUFQYCuEphLBu8C8DevlBrjDp7e3QbNq69BMeEzVz1rmumNhZiM6_6CFLBOSTyMXsA483c7Gcpj--mx07NeviWCXbV0kTp7nw5ZuZ0g8lQR3KNgbz8RdABaBJ_4Rg7Wr9Qsq_N02C"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark to-transparent opacity-80"></div>
+<div class="absolute bottom-6 left-6">
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-accent/20 text-accent text-[10px] font-bold orbitron rounded-full">DISCORDPY</span>
+<span class="px-3 py-1 bg-secondary/20 text-secondary text-[10px] font-bold orbitron rounded-full">AI</span>
+</div>
+</div>
+</div>
+<div class="p-8">
+<h3 class="orbitron text-2xl font-bold text-white mb-3">Zenith Bot</h3>
+<p class="text-slate-400 mb-6 font-medium">A multi-functional Discord bot integrated with OpenAI for smart moderation and engagement.</p>
+<div class="flex items-center gap-4">
+<button class="flex-1 py-3 bg-secondary/10 border border-secondary/30 text-secondary orbitron font-bold text-sm rounded-lg hover:bg-secondary hover:text-white transition-all">INVITE BOT</button>
+<button class="size-12 flex items-center justify-center glass rounded-lg hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined">code</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="mt-auto py-12 px-6 md:px-20 border-t border-white/5 glass">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col items-center md:items-start gap-2">
+<div class="flex items-center gap-3">
+<div class="size-6 bg-primary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-background-dark text-xs font-bold">terminal</span>
+</div>
+<h2 class="orbitron text-white text-lg font-black tracking-tighter">KRISHNA</h2>
+</div>
+<p class="text-slate-500 text-sm font-medium">© 2024 Krishna Developer Portfolio. All rights reserved.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">terminal</span></a>
+</div>
+<div class="flex items-center gap-2 text-xs orbitron tracking-widest text-slate-500 uppercase">
+                    Designed for the <span class="text-primary">Future</span>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
